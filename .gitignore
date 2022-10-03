@@ -13,6 +13,7 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+
 # Mono auto generated files
 mono_crash.*
 
@@ -350,16 +351,17 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-# Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-UP.Ates/.idea
+UP.Ates/.idea/*
 UP.Ates/.idea/
 .idea
 .idea/
+.idea/*
+
 NuGet.config
 appsettings.local.json
 **/*.orig
@@ -377,9 +379,6 @@ output/
 project.lock.json
 .DS_Store
 *.pyc
-
-# Visual Studio Code
-.vscode
 
 # User-specific files
 *.suo
