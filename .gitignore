@@ -21,6 +21,8 @@ obj
 packages
 UP.Ates/UP.Ates.Auth/bin
 UP.Ates/UP.Ates.Auth/obj
+UP.Ates/UP.Ates.TaskTracker/bin
+UP.Ates/UP.Ates.TaskTracker/obj
 # Mono auto generated files
 mono_crash.*
 
