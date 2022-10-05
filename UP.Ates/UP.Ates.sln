@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UP.Ates.TaskTracker", "UP.Ates.TaskTracker\UP.Ates.TaskTracker.csproj", "{32F84A97-6583-4B4C-A7F5-B04B872DC40D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UP.Ates.Auth", "UP.Ates.Auth\UP.Ates.Auth.csproj", "{98405C87-31BA-42EE-B0B6-088EE97632CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{32F84A97-6583-4B4C-A7F5-B04B872DC40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32F84A97-6583-4B4C-A7F5-B04B872DC40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32F84A97-6583-4B4C-A7F5-B04B872DC40D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98405C87-31BA-42EE-B0B6-088EE97632CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98405C87-31BA-42EE-B0B6-088EE97632CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98405C87-31BA-42EE-B0B6-088EE97632CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98405C87-31BA-42EE-B0B6-088EE97632CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
