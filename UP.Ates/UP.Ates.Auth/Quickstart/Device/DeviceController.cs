@@ -16,8 +16,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using UP.Ates.Auth.Quickstart.Consent;
 
-namespace IdentityServerHost.Quickstart.UI
+namespace UP.Ates.Auth.Quickstart.Device
 {
     [Authorize]
     [SecurityHeaders]

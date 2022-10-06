@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using MvcClient.Models;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
+using UP.Ates.TaskTracker.Models;
 
-namespace MvcClient.Controllers
+namespace UP.Ates.TaskTracker.Controllers
 {
     public class HomeController : Controller
     {

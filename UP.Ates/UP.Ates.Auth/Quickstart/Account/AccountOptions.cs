@@ -4,7 +4,7 @@
 
 using System;
 
-namespace IdentityServerHost.Quickstart.UI
+namespace UP.Ates.Auth.Quickstart.Account
 {
     public class AccountOptions
     {

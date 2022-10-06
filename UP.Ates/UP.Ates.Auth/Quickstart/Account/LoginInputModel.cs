@@ -4,7 +4,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace IdentityServerHost.Quickstart.UI
+namespace UP.Ates.Auth.Quickstart.Account
 {
     public class LoginInputModel
     {

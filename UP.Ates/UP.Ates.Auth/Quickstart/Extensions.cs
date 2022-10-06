@@ -1,8 +1,9 @@
 using System;
 using IdentityServer4.Models;
 using Microsoft.AspNetCore.Mvc;
+using UP.Ates.Auth.Quickstart.Account;
 
-namespace IdentityServerHost.Quickstart.UI
+namespace UP.Ates.Auth.Quickstart
 {
     public static class Extensions
     {

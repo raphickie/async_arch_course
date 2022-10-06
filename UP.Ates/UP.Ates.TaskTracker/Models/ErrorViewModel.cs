@@ -1,6 +1,4 @@
-using System;
-
-namespace MvcClient.Models
+namespace UP.Ates.TaskTracker.Models
 {
     public class ErrorViewModel
     {
