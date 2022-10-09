@@ -32,5 +32,12 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="Tasks" uuid="b46b8209-0dc4-4731-96bf-74613536a742">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/UP.Ates.TaskTracker/Tasks</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

@@ -24,6 +24,12 @@ namespace UP.Ates.TaskTracker.Controllers
             return View();
         }
         
+        // [HttpPost]
+        // public IActionResult AssignTasks()
+        // {
+        //     
+        // }
+        
         public async Task<IActionResult> CallApi()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
