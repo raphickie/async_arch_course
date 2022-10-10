@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -21,8 +19,8 @@ public class TasksRepository
     public async Task<PopugTask[]> GetUndoneTasksAsync()
     {
         var result = new List<PopugTask>();
-        using var con = new SqlConnection();
-        con.Open();
+        await using var con = new SqlConnection();
+        await con.OpenAsync();
 
         var reader = await con.ExecuteReaderAsync(@"
             SELECT t.TaskId, t.Description, t.UserId, t.Status 
@@ -43,5 +41,19 @@ public class TasksRepository
         }
 
         return result.ToArray();
+    }
+
+    public async Task SaveTaskAsync(PopugTask task)
+    {
+        await using var con = new SqlConnection();
+        await con.OpenAsync();
+
+        var resultRows = await con.ExecuteAsync(@"
+            update tasks
+                
+            set TaskId=@taskId, Description=@description, UserId=@userId, Status=@status)
+            where t.Id = @taskId");
+
+        return;
     }
 }
