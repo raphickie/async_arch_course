@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
+using Microsoft.Data.Sqlite;
 using UP.Ates.TaskTracker.Domain;
 
 namespace UP.Ates.TaskTracker.Repositories;
@@ -19,7 +20,7 @@ public class TasksRepository
     public async Task<PopugTask[]> GetUndoneTasksAsync()
     {
         var result = new List<PopugTask>();
-        await using var con = new SqlConnection();
+        await using var con = new SqliteConnection(_settings.ConnectionString);
         await con.OpenAsync();
 
         var reader = await con.ExecuteReaderAsync(@"
@@ -45,7 +46,7 @@ public class TasksRepository
 
     public async Task SaveTaskAsync(PopugTask task)
     {
-        await using var con = new SqlConnection();
+        await using var con = new SqliteConnection();
         await con.OpenAsync();
 
         var resultRows = await con.ExecuteAsync(@"

@@ -20,11 +20,6 @@ public class TaskService
         var allTasks = await _tasksRepository.GetUndoneTasksAsync();
         var allPopugs = await _userRepository.GetAllUsersAsync();
         var rnd = new Random();
-        var randomizedPopugIds = allPopugs
-            .Select(x => x.Id)
-            .OrderBy(x=>rnd.Next())
-            .ToArray();
-
         foreach (var task in allTasks)
         {
             task.UserId = allPopugs[rnd.Next(allPopugs.Length)].Id;

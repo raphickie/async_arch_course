@@ -7,16 +7,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using UP.Ates.TaskTracker.Models;
+using UP.Ates.TaskTracker.Services;
 
 namespace UP.Ates.TaskTracker.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly TaskService _taskService;
+        public HomeController(ILogger<HomeController> logger, TaskService taskService)
         {
             _logger = logger;
+            _taskService = taskService;
         }
 
         public IActionResult Index()
@@ -24,11 +26,12 @@ namespace UP.Ates.TaskTracker.Controllers
             return View();
         }
         
-        // [HttpPost]
-        // public IActionResult AssignTasks()
-        // {
-        //     
-        // }
+        [HttpPost]
+        public async Task<IActionResult> AssignTasks()
+        {
+            await _taskService.AssignTasksAsync();
+            return Ok();
+        }
         
         public async Task<IActionResult> CallApi()
         {

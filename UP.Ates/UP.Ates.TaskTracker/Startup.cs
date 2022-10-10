@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
+using UP.Ates.TaskTracker.Repositories;
+using UP.Ates.TaskTracker.Services;
 
 namespace UP.Ates.TaskTracker
 {
@@ -12,7 +14,14 @@ namespace UP.Ates.TaskTracker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddSingleton<TaskService>();
+            services.AddSingleton<TasksRepository>();
+            services.AddSingleton<UserRepository>();
+            services.AddSingleton(new RepositoryConnectionSettings
+            {
+                ConnectionString =
+                    "Data Source=TaskTracker.db"
+            });
             JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
             IdentityModelEventSource.ShowPII = true;
             services.AddAuthentication(options =>
@@ -54,8 +63,8 @@ namespace UP.Ates.TaskTracker
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute()
-                    .RequireAuthorization();
+                endpoints.MapDefaultControllerRoute();
+                // .RequireAuthorization();
             });
         }
     }
