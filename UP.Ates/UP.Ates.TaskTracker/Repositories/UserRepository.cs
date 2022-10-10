@@ -5,22 +5,23 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
+using UP.Ates.Auth.Models;
 using UP.Ates.TaskTracker.Domain;
 
 namespace UP.Ates.TaskTracker.Repositories;
 
-public class TasksRepository
+public class UserRepository
 {
     private RepositoryConnectionSettings _settings;
 
-    public TasksRepository(RepositoryConnectionSettings settings)
+    public UserRepository(RepositoryConnectionSettings settings)
     {
         _settings = settings;
     }
 
-    public async Task<PopugTask[]> GetUndoneTasksAsync()
+    public async Task<ApplicationUser[]> GetAllUsersAsync()
     {
-        var result = new List<PopugTask>();
+        var result = new List<ApplicationUser>();
         using var con = new SqlConnection();
         con.Open();
 
@@ -33,15 +34,11 @@ public class TasksRepository
 ");
         while (await reader.ReadAsync())
         {
-            result.Add(new PopugTask()
+            result.Add(new ApplicationUser()
             {
-                Id = reader.GetString("TaskId"),
-                Description = reader.GetString("Description"),
-                UserId = reader.GetString("UserId"),
-                Status = reader.GetInt32("Status")
+                Id = reader.GetString("Id"),
             });
         }
-
         return result.ToArray();
     }
 }
