@@ -18,6 +18,8 @@
 _ReSharper.*
 bin
 obj
+*/bin
+*/obj
 packages
 UP.Ates/UP.Ates.Auth/bin
 UP.Ates/UP.Ates.Auth/obj
