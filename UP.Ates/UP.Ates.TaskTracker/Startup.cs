@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
+using UP.Ates.TaskTracker.Consumers.Auth;
 using UP.Ates.TaskTracker.Repositories;
 using UP.Ates.TaskTracker.Services;
 
@@ -17,6 +18,7 @@ namespace UP.Ates.TaskTracker
             services.AddSingleton<TaskService>();
             services.AddSingleton<TasksRepository>();
             services.AddSingleton<UserRepository>();
+            services.AddHostedService<UserConsumer>();
             services.AddSingleton(new RepositoryConnectionSettings
             {
                 ConnectionString =

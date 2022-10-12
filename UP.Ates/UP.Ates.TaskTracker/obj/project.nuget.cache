@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "gOFaNW5ct1mCq0ZJg+XMXnucjFEiQ+P4Zc4S16rAU1lR0SFKJ9JuP4oaDk6rmT4cw5TNeZb99UXl2TAxDmEwiQ==",
+  "dgSpecHash": "Ro+nXLd/YJ3D/83beE5u3/fTNP1BQZPN/IDiSv9iiu0oYg+EHmSjl/mLK08hAhtjh5SFbdhkunx8N4YKLewppw==",
   "success": true,
   "projectFilePath": "/Users/dmitryzuev/dodosrc/async_arch_course/UP.Ates/UP.Ates.TaskTracker/UP.Ates.TaskTracker.csproj",
   "expectedPackageFiles": [
+    "/Users/dmitryzuev/.nuget/packages/confluent.kafka/1.9.3/confluent.kafka.1.9.3.nupkg.sha512",
     "/Users/dmitryzuev/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/Users/dmitryzuev/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/dmitryzuev/.nuget/packages/identitymodel/4.0.0/identitymodel.4.0.0.nupkg.sha512",
     "/Users/dmitryzuev/.nuget/packages/identitymodel.aspnetcore.oauth2introspection/4.0.1/identitymodel.aspnetcore.oauth2introspection.4.0.1.nupkg.sha512",
     "/Users/dmitryzuev/.nuget/packages/identityserver4.accesstokenvalidation/3.0.1/identityserver4.accesstokenvalidation.3.0.1.nupkg.sha512",
+    "/Users/dmitryzuev/.nuget/packages/librdkafka.redist/1.9.2/librdkafka.redist.1.9.2.nupkg.sha512",
     "/Users/dmitryzuev/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.0.0/microsoft.aspnetcore.authentication.jwtbearer.3.0.0.nupkg.sha512",
     "/Users/dmitryzuev/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/6.0.9/microsoft.aspnetcore.authentication.openidconnect.6.0.9.nupkg.sha512",
     "/Users/dmitryzuev/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.9/microsoft.aspnetcore.cryptography.internal.6.0.9.nupkg.sha512",
