@@ -1,0 +1,23 @@
+@model UP.Ates.Auth.Models.ApplicationUser[]
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<a href="Users/New">Add new</a>
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>
+            <form method="post" action="Users/delete?userId=@user.Id">
+                <p>@user.Id</p> <p>@user.UserName</p>&nbsp;
+                @if(user.UserName != "alice" && user.UserName!="bob")
+                {
+                    <input type="submit" value="Delete"/>
+                }
+            </form>
+        </li>
+    }
+</ul>
+<h2>title</h2>

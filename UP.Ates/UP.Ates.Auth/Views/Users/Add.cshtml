@@ -1,0 +1,18 @@
+@model UP.Ates.Auth.Models.ApplicationUser
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<form type="submit" method="post" action="New">
+    <label>Email</label>
+    <input type="text" name="Email"/>
+    <br/>
+    <label>Username</label>
+    <input type="text" name="Username"/>
+    <br/>
+        <label>Password</label>
+    <input type="text" value="Password" name="Password"/>
+    <input type="submit" value="Add"/>
+</form>
+
+<h2>title</h2>

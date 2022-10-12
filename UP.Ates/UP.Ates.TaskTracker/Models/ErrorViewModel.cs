@@ -1,8 +1,9 @@
-namespace UP.Ates.TaskTracker.Models;
-
-public class ErrorViewModel
+namespace UP.Ates.TaskTracker.Models
 {
-    public string? RequestId { get; set; }
+    public class ErrorViewModel
+    {
+        public string RequestId { get; set; }
 
-    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
 }
