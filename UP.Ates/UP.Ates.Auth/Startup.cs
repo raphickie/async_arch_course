@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using UP.Ates.Auth.Data;
 using UP.Ates.Auth.Models;
 using UP.Ates.Auth.Producers;
+using UP.Ates.Common.Kafka;
 
 namespace UP.Ates.Auth
 {
@@ -31,7 +32,7 @@ namespace UP.Ates.Auth
         {
             services.AddControllersWithViews();
             services.AddScoped<UserService>();
-            services.AddScoped<MessageProducer>();
+            services.AddScoped<MessageProducer<ApplicationUser>, ApplicationUserProducer>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 

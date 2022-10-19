@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UP.Ates.TaskTracker", "UP.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UP.Ates.Auth", "UP.Ates.Auth\UP.Ates.Auth.csproj", "{BF6255B9-B784-4309-B68B-1BCE2B920E0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UP.Ates.Common.Kafka", "UP.Ates.Common.Kafka\UP.Ates.Common.Kafka.csproj", "{C76ACC65-A8D4-43B3-A556-051A9FE4638B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UP.Ates.Accounting", "UP.Ates.Accounting\UP.Ates.Accounting.csproj", "{E35F05EE-8FB0-4B65-9582-2E0B5E4F7690}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{BF6255B9-B784-4309-B68B-1BCE2B920E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF6255B9-B784-4309-B68B-1BCE2B920E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF6255B9-B784-4309-B68B-1BCE2B920E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C76ACC65-A8D4-43B3-A556-051A9FE4638B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76ACC65-A8D4-43B3-A556-051A9FE4638B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C76ACC65-A8D4-43B3-A556-051A9FE4638B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C76ACC65-A8D4-43B3-A556-051A9FE4638B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35F05EE-8FB0-4B65-9582-2E0B5E4F7690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35F05EE-8FB0-4B65-9582-2E0B5E4F7690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35F05EE-8FB0-4B65-9582-2E0B5E4F7690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35F05EE-8FB0-4B65-9582-2E0B5E4F7690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
