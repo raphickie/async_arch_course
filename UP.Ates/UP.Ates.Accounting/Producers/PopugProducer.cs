@@ -1,0 +1,20 @@
+using System.Threading.Tasks;
+using UP.Ates.Common.Kafka;
+using UP.Ates.TaskTracker.Contracts.Outgoing.v1;
+
+namespace UP.Ates.TaskTracker.Producers
+{
+    public class PopugProducer : MessageProducer<Domain.PopugTask>
+    {
+        protected override object MapToContract(Domain.PopugTask message)
+        {
+            return Contracts.Outgoing.v1.PopugTask.FromDomain(message);
+        }
+        
+        public async Task ProduceTaskAssigned(Domain.PopugTask popugTask, string topicName)
+        {
+            var evt =  TaskAssignedEvent.FromDomain(popugTask);
+            await ProduceInternal(evt, topicName);
+        }
+    }
+}

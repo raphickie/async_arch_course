@@ -3,15 +3,15 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using UP.Ates.Auth.Data;
 using UP.Ates.Auth.Models;
-using UP.Ates.Auth.Producers;
+using UP.Ates.Common.Kafka;
 
 namespace UP.Ates.Auth
 {
     public class UserService
     {
         private readonly ApplicationDbContext _dbContext;
-        private MessageProducer _producer;
-        public UserService(ApplicationDbContext dbContext, MessageProducer producer)
+        private MessageProducer<ApplicationUser> _producer;
+        public UserService(ApplicationDbContext dbContext, MessageProducer<ApplicationUser> producer)
         {
             _dbContext = dbContext;
             _producer = producer;
@@ -25,7 +25,7 @@ namespace UP.Ates.Auth
         public async Task AddUser(ApplicationUser user)
         {
             await _dbContext.Users.AddAsync(user);
-            await _producer.Produce(user);
+            await _producer.Produce(user, "User");
             await _dbContext.SaveChangesAsync();
         }
 

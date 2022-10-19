@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Authentication
+
+
+<h1>Hi</h1>
+
+<form method="post" action="Home/AssignTasks">
+    <td>
+        <input type="submit" value="Заассайнить таски"/>
+    </td>
+        
+    </form>
+<a>New task</a>
+
+<h2>Claims</h2>
+
+<dl>
+    @foreach (var claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+</dl>
+
+<h2>Properties</h2>
+
+<dl>
+    @foreach (var prop in (await Context.AuthenticateAsync()).Properties.Items)
+    {
+        <dt>@prop.Key</dt>
+        <dd>@prop.Value</dd>
+    }
+</dl>

@@ -1,47 +1,50 @@
-using System.Net.Http.Json;
-using System.Threading;
-using System.Threading.Tasks;
 using Confluent.Kafka;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
-namespace UP.Ates.TaskTracker.Consumers;
+namespace UP.Ates.Common.Kafka;
 
-public abstract class MessageConsumerBase<TEntity>:IHostedService
+public abstract class MessageConsumer<TEntity> : IHostedService
 {
     private CancellationTokenSource _cts;
-    private Thread _consumingThread;
+    private Thread? _consumingThread;
+    private readonly string _entityName;
     protected abstract string TopicName { get; }
 
-    protected MessageConsumerBase()
+    protected MessageConsumer()
     {
+        _consumingThread = default;
         _cts = new CancellationTokenSource();
+        _entityName = typeof(TEntity).FullName;
     }
 
     protected static class TopicNames
     {
         public static string User = "User";
     }
-    
-    public void Consume(CancellationToken token)
+
+    private void Consume(CancellationToken token)
     {
         var config = new ConsumerConfig
         {
             BootstrapServers = "localhost:9092,localhost:9092",
-            GroupId = "foo",
+            GroupId = _entityName,
             AutoOffsetReset = AutoOffsetReset.Earliest
         };
 
-        using var consumer = new ConsumerBuilder<Ignore, string>(config).Build();
-        consumer.Subscribe(new[]{TopicName});
+        using var consumer = new ConsumerBuilder<string, string>(config).Build();
+        consumer.Subscribe(new[] { TopicName });
 
         while (!token.IsCancellationRequested)
         {
             var consumeResult = consumer.Consume(token);
             var resultString = consumeResult.Message.Value;
-            var resultObject = JsonConvert.DeserializeObject<TEntity>(resultString);
-            Handle(resultObject);
-            consumer.Commit(consumeResult);
+            if (typeof(TEntity).FullName == consumeResult.Message.Key)
+            {
+                var resultObject = JsonConvert.DeserializeObject<TEntity>(resultString);
+                Handle(resultObject);
+                consumer.Commit(consumeResult);
+            }
         }
 
         consumer.Close();

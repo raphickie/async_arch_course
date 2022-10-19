@@ -21,4 +21,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.5" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UP.Ates.Common.Kafka\UP.Ates.Common.Kafka.csproj" />
+  </ItemGroup>
 </Project>

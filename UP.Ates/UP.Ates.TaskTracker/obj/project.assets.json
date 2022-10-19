@@ -1048,6 +1048,20 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "UP.Ates.Common.Kafka/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Confluent.Kafka": "1.9.3",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "bin/placeholder/UP.Ates.Common.Kafka.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UP.Ates.Common.Kafka.dll": {}
+        }
       }
     }
   },
@@ -2752,6 +2766,11 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "UP.Ates.Common.Kafka/1.0.0": {
+      "type": "project",
+      "path": "../UP.Ates.Common.Kafka/UP.Ates.Common.Kafka.csproj",
+      "msbuildProject": "../UP.Ates.Common.Kafka/UP.Ates.Common.Kafka.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2765,7 +2784,8 @@
       "Microsoft.AspNetCore.Identity.UI >= 6.0.9",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.9",
-      "System.Data.SqlClient >= 4.8.3"
+      "System.Data.SqlClient >= 4.8.3",
+      "UP.Ates.Common.Kafka >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2797,7 +2817,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/dmitryzuev/dodosrc/async_arch_course/UP.Ates/UP.Ates.Common.Kafka/UP.Ates.Common.Kafka.csproj": {
+              "projectPath": "/Users/dmitryzuev/dodosrc/async_arch_course/UP.Ates/UP.Ates.Common.Kafka/UP.Ates.Common.Kafka.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

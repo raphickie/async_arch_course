@@ -8,8 +8,23 @@
         <input type="submit" value="Заассайнить таски"/>
     </td>
         
-    </form>
-<a>New task</a>
+</form>
+<label>@ViewBag.Result</label>
+
+<h2>Tasks</h2>
+@Html.ActionLink("New task","New","Tasks")
+<ul>
+    @{
+        foreach (var task in Model)
+        {
+            <li>
+                <form method="post" action="Tasks/delete?id=@task.Id">
+                    @task.Title @task.Status @task.UserId <input type="submit" value="Delete"/>
+                </form>
+            </li>
+        }
+    }
+</ul>
 
 <h2>Claims</h2>
 

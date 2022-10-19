@@ -4,35 +4,39 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using UP.Ates.TaskTracker.Models;
+using UP.Ates.TaskTracker.Repositories;
 using UP.Ates.TaskTracker.Services;
 
 namespace UP.Ates.TaskTracker.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly TaskService _taskService;
-        public HomeController(ILogger<HomeController> logger, TaskService taskService)
+        private readonly TasksRepository _tasksRepository;
+
+        public HomeController(TaskService taskService, TasksRepository tasksRepository)
         {
-            _logger = logger;
             _taskService = taskService;
+            _tasksRepository = tasksRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string result)
         {
-            return View();
+            var model = await _tasksRepository.GetUndoneTasksAsync();
+            ViewBag.Result = result;
+            return View(model);
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> AssignTasks()
         {
             await _taskService.AssignTasksAsync();
-            return Ok();
+            return RedirectToAction("Index", "Home", new { result = "Заассайнено" });
         }
-        
+
+
         public async Task<IActionResult> CallApi()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
