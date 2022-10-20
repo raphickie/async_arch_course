@@ -1,5 +1,5 @@
 
-namespace UP.Ates.TaskTracker.Contracts.Outgoing.v1;
+namespace UP.Ates.TaskTracker.Contracts.Outgoing.PopugTask.v1;
 
 public class PopugTask
 {

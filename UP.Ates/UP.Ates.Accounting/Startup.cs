@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
+using UP.Ates.Accounting.Consumers.TaskTracker.TaskAssignedEvent.v1;
 using UP.Ates.TaskTracker.Consumers.Auth;
 using UP.Ates.TaskTracker.Producers;
 using UP.Ates.TaskTracker.Repositories;
@@ -20,6 +21,7 @@ namespace UP.Ates.TaskTracker
             services.AddSingleton<TasksRepository>();
             services.AddSingleton<UserRepository>();
             services.AddHostedService<UserConsumer>();
+            services.AddHostedService<TaskAssignedEventConsumer>();
             services.AddSingleton<PopugProducer>();
             services.AddSingleton(new RepositoryConnectionSettings
             {

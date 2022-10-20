@@ -14,10 +14,11 @@ public class TaskService
     private UserRepository _userRepository;
     private PopugProducer _producer;
     
-    public TaskService(TasksRepository tasksRepository, UserRepository userRepository)
+    public TaskService(TasksRepository tasksRepository, UserRepository userRepository, PopugProducer producer)
     {
         _tasksRepository = tasksRepository;
         _userRepository = userRepository;
+        _producer = producer;
     }
 
     public async Task AssignTasksAsync()
@@ -33,7 +34,7 @@ public class TaskService
         }
     }
 
-    public async Task SaveTaskAsync(PopugTask task)
+    public async Task SaveNewTaskAsync(PopugTask task)
     {
         var random = new Random();
         var availablePopugs = await _userRepository.GetAllUsersAsync();
@@ -42,5 +43,6 @@ public class TaskService
         task.Id = Guid.NewGuid().ToString();
         task.Status = TaskStatus.NotDone;
         await _tasksRepository.AddTaskAsync(task);
+        await _producer.ProduceTaskAssigned(task, "TaskAssigned");
     }
 }

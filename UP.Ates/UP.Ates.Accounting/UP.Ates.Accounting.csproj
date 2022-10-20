@@ -28,9 +28,4 @@
     <ProjectReference Include="..\UP.Ates.Common.Kafka\UP.Ates.Common.Kafka.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Consumers\TaskTracker\v1" />
-    <Folder Include="Contracts\Incoming" />
-  </ItemGroup>
-
 </Project>

@@ -6,6 +6,7 @@ public class PopugTask
 {
     public string Id { get; set; }
     public string Title { get; set; }
+    public string JiraId { get; set; }
     public string UserId { get; set; }
     public TaskStatus Status { get; set; }
 }

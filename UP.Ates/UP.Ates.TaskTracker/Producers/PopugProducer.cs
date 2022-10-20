@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using UP.Ates.Common.Kafka;
-using UP.Ates.TaskTracker.Contracts.Outgoing.v1;
+using UP.Ates.TaskTracker.Contracts.Outgoing.PopugTask.v1;
+using UP.Ates.TaskTracker.Contracts.Outgoing.TaskAssignedEvent.v1;
 
 namespace UP.Ates.TaskTracker.Producers
 {
@@ -8,7 +9,7 @@ namespace UP.Ates.TaskTracker.Producers
     {
         protected override object MapToContract(Domain.PopugTask message)
         {
-            return Contracts.Outgoing.v1.PopugTask.FromDomain(message);
+            return PopugTask.FromDomain(message);
         }
         
         public async Task ProduceTaskAssigned(Domain.PopugTask popugTask, string topicName)

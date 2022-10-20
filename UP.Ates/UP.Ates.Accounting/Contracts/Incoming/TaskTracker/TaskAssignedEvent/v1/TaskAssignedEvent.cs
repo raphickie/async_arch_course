@@ -1,4 +1,5 @@
-namespace UP.Ates.TaskTracker.Contracts.Outgoing.v1;
+// ReSharper disable once CheckNamespace
+namespace UP.Ates.TaskTracker.Contracts.Outgoing.TaskAssignedEvent.v1;
 
 public class TaskAssignedEvent
 {
