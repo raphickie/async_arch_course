@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using UP.Ates.Common.Kafka;
-using UP.Ates.TaskTracker.Contracts.Outgoing.PopugTask.v1;
+using UP.Ates.TaskTracker.Contracts.Outgoing.PopugTask.v2;
 using UP.Ates.TaskTracker.Contracts.Outgoing.TaskAssignedEvent.v1;
 
 namespace UP.Ates.TaskTracker.Producers
