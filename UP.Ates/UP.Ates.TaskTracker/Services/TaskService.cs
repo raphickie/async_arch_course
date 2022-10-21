@@ -43,6 +43,7 @@ public class TaskService
         task.Id = Guid.NewGuid().ToString();
         task.Status = TaskStatus.NotDone;
         await _tasksRepository.AddTaskAsync(task);
+        await _producer.Produce(task, "PopugTask");
         await _producer.ProduceTaskAssigned(task, "TaskAssigned");
     }
 }

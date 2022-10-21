@@ -20,7 +20,7 @@ public abstract class MessageProducer<T>
         };
         using var producer = new ProducerBuilder<string, string>(config).Build();
         var messageJson = JsonConvert.SerializeObject(message);
-        var contractFullName = message.GetType().FullName;
+        Schemas.Schemas.Validate(message);
         await producer.ProduceAsync(topicName,
             new Message<string, string> { Key=message.GetType().FullName, Value = messageJson });
     }

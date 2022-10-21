@@ -27,6 +27,10 @@ public class TasksController : Controller
     [HttpPost("New")]
     public async Task<IActionResult> New(PopugTask task)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState.Values);
+        }
         await _tasksService.SaveNewTaskAsync(task);
         
         return RedirectToAction("Index", "Home", new{result="Таска создана"});
